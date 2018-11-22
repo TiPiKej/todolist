@@ -1,11 +1,19 @@
 {
   "name": "todolist",
   "version": "0.0.1",
+  "homepage": "https://tipikej.github.io/todolist",
   "description": "Mini program to making 'to do' lists",
   "main": "index.js",
   "scripts": {
     "start": "code . && cd ./dist/ && live-server",
     "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TiPiKej/todolist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TiPiKej/todolist/issues"
   },
   "author": "",
   "license": "ISC",
