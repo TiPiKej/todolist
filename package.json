@@ -4,7 +4,8 @@
   "description": "Mini program to making 'to do' lists",
   "main": "index.js",
   "scripts": {
-    "start": "code . && cd ./dist/ && live-server"
+    "start": "code . && cd ./dist/ && live-server",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
