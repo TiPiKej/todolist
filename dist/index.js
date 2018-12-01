@@ -20,9 +20,10 @@ function download(data, filename, type) {
 }
 
 class List {
-  constructor({ title, defaultValue, target, nr } = {}) {
+  constructor({ title, defaultValue, target, nr, newL } = {}) {
     this.target = target ? target : document.querySelector("body");
     this.nr = nr === undefined ? 0 : nr;
+    this.newL = newL === undefined ? false : true;
 
     this.title = title ? title : "To do list";
     if (defaultValue === undefined) defaultValue = [];
@@ -210,7 +211,7 @@ class List {
     wrapper.appendChild(this.linesWrapper);
     endButtons.appendChild(saveBrowser);
     endButtons.appendChild(backToMainMenu);
-    endButtons.appendChild(removeList);
+    if (!this.newL) endButtons.appendChild(removeList);
     // endButtons.appendChild(saveDownload);
     endButtons.appendChild(addNew);
 
@@ -250,7 +251,7 @@ function helloPage(target = document.querySelector("body")) {
   wrapper.className = "c-home";
 
   const newList = document.createElement("button");
-  newList.onclick = () => new List({ target });
+  newList.onclick = () => new List({ target, newL: true });
   newList.innerText = "New 'to do' list";
   newList.className = "c-home--new-button";
   wrapper.appendChild(newList);
