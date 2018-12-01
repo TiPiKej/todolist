@@ -5,11 +5,12 @@
   "description": "Mini program to making 'to do' lists",
   "main": "index.js",
   "scripts": {
-    "start": "start powershell npm run sass && npm run editor && npm run server",
+    "prestart": "start powershell npm run sass",
+    "start": "npm run editor && npm run server",
     "server": "cd ./dist/ && live-server",
     "editor": "code .",
     "deploy": "gh-pages -d dist",
-    "sass": "node-sass dist --watch --recursive --output dist"
+    "sass": "node-sass dist/sass --watch --recursive --output dist/css"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,5 @@
-@import sass/mixin
-@import sass/vars
+@import dependencies/mixin
+@import dependencies/vars
   
 *
   margin: 0
@@ -10,8 +10,8 @@
 
 #root
   background: $rootBG
-  width: 100vw
-  height: 100vh
+  min-width: 100vw
+  min-height: 100vh
   display: flex
   justify-content: center
   align-items: flex-start
@@ -101,3 +101,23 @@
       font-size: 1.1em
       +buttonStyles
 
+#dragShow
+  display: flex
+  justify-content: center
+  align-items: center
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background: $dropBG
+  transition: all 220ms ease-in-out
+  opacity: 0
+  pointer-events: none
+  &.active
+    opacity: 1
+    pointer-events: unset
+  p
+    color: #ffffff
+    font-weight: 700
+    font-size: 2.5em
