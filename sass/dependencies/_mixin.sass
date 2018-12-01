@@ -1,0 +1,20 @@
+=multibrowser($a, $b)
+  #{$a}: $b
+  -webkit-#{$a}: $b
+  -moz-#{$a}: $b
+  -ms-#{$a}: $b
+  -o-#{$a}: $b
+
+=buttonStyles
+  cursor: pointer
+  text-shadow: 2px 2px 5px #000
+  font-family: Arial, Helvetica, sans-serif
+  border: none
+  outline: hidden
+  background: $buttonBG
+  +multibrowser(transition, all 220ms ease-in-out)
+  border-radius: 6px
+  color: #ffffff
+  &:hover
+    text-shadow: 2px 2px 8px #000
+    background: $buttonBGh
